@@ -19,7 +19,6 @@ jQuery(document).ready(function($){
 
 	$(document).on('click', '.embark-carousel-thumb', function(){
 		var id = $('#' + $(this).attr("id"));
-		console.log(id);
 		$(id).on('slid.bs.carousel', function(){
 			embark_get_bs_thumbs(id);
 		});
