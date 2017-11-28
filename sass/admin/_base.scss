@@ -4,6 +4,9 @@
   ===== ADMIN BASE CSS =====
   ==========================
 */
+
+#wpcontent{font-family:'Raleway', 'Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;font-weight:300}
+h1,h2,h3,h4,h5,.form-table th,.form-wrap label{font-weight:500}
 .embark-general-form,
 .embark-sidebar-preview {display: inline-block; float: left;}
 
@@ -17,6 +20,9 @@
 	===== SOCIAL ICONS =====
 	========================
 */
+
+// Button icon fix:
+.embark-icon-button:before{margin-top:3px;margin-left:-3px}
 
 @font-face {
   font-family: 'embark-social-icon';

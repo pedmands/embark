@@ -9,23 +9,40 @@
 
  function embark_load_admin_scripts($hook){
  	//echo $hook;
+
+ 	// register css admin section
+ 	wp_register_style( 'raleway-admin', 'https://fonts.googleapis.com/css?family=Raleway:200,300,500' );
+ 	wp_register_style( 'embark_admin', get_template_directory_uri() . '/css/embark.admin.css', array(), '1.0.0', 'all' );
+
+ 	//register js admin section
+ 	wp_register_script( 'embark_admin_script', get_template_directory_uri() . '/js/embark.admin.js', array('jquery'), '1.0.0', true);
+
+ 	$pages_array = array(
+		'toplevel_page_embark_options',
+		'embark_page_embark_options_css',
+		'embark_page_embark_contact_options',
+		'embark_page_embark_theme_options'
+	);
+
+	if(in_array($hook, $pages_array)){
+		wp_enqueue_style( 'embark_admin' );
+		wp_enqueue_style( 'raleway_admin' );
+	}
+
  	if ($hook == 'toplevel_page_embark_options'){ // adding media uploader & styles to Sidebar Options
- 		wp_register_style( 'embark_admin', get_template_directory_uri() . '/css/embark.admin.css', array(), '1.0.0', 'all' );
-	 	wp_enqueue_style( 'embark_admin' );
 	 	// add media uploader:
 	 	wp_enqueue_media();
-	 	wp_register_script( 'embark_admin_script', get_template_directory_uri() . '/js/embark.admin.js', array('jquery'), '1.0.0', true);
-	 	wp_enqueue_script( 'embark_admin_script' );
 	 	
-	} else if ( $hook == 'embark_page_embark_options_css' ){// adding ace to backend for Schweet Syntax Editor
+	 	wp_enqueue_script( 'embark_admin_script' );
+	} 
+	
+	if ( $hook == 'embark_page_embark_options_css' ){// adding ace to backend for Schweet Syntax Editor
 
 		wp_enqueue_style('ace-style', get_template_directory_uri() . '/css/embark.ace.css', array(), '1.0.0', 'all' );
 		wp_enqueue_script( 'embark-ace', get_template_directory_uri() . '/js/ace/ace.js', array('jquery'), '1.2.9', true );
 		wp_enqueue_script( 'embark-custom-css-script',  get_template_directory_uri() . '/js/embark.custom_css.js', array('jquery'), '1.0.0', true );
 
- 	} else { 
- 		return;
- 	 }
+ 	} 
  }
  add_action( 'admin_enqueue_scripts', 'embark_load_admin_scripts' );
 

@@ -168,7 +168,11 @@ jQuery(document).ready(function($){
 		$('body').toggleClass('no-scroll');
 		$('.sidebar-overlay').fadeToggle(320);
 	}); // toggle sidebar
-	
+	$(document).on('click', '.sidebar-overlay', function(){
+		$('.embark-sidebar').toggleClass('sidebar-closed');
+		$('body').toggleClass('no-scroll');
+		$('.sidebar-overlay').fadeToggle(320);
+	});
 
 
 });
