@@ -15,6 +15,9 @@ get_header(); ?>
 					<?php 
 					if (have_posts()):
 						while(have_posts()) : the_post();
+							// Save posts views
+							embark_save_post_views(get_the_ID());
+							
 							get_template_part('template-parts/single', get_post_format());
 							echo embark_post_navigation();
 							if(comments_open()){

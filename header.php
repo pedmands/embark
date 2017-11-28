@@ -19,8 +19,8 @@
 	
 </head>
 <body <?php body_class(); ?>>
-	<!-- sidebar-closed -->
-	<div class="embark-sidebar">
+	
+	<div class="embark-sidebar sidebar-closed">
 		<div class="embark-sidebar-container">
 			<a class="js-toggleSidebar sidebar-close">
 				<span class="embark-icon embarkclose"></span>
@@ -30,6 +30,8 @@
 			</div><!-- .sidebar-scroll -->
 		</div><!-- .embark-sidebar-container -->
 	</div><!-- .embark-sidebar -->
+
+	<div class="sidebar-overlay"></div>
 
 
 	<div class="container-fluid embark-container-fluid">

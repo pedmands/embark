@@ -56,11 +56,11 @@ class Embark_Profile_Widget extends WP_Widget {
 		<?php
 		echo $args['after_widget'];
 	}
-}
+} // Embark Profile Widget
 
 add_action('widgets_init', function(){
 	register_widget('Embark_Profile_Widget');
-});
+}); // Embark Profile Widget
 
 // Edit default WordPress widgets
 function embark_tag_cloud_font_fix($args){
@@ -80,3 +80,19 @@ function embark_list_categories_output_change( $links ) {
 	
 }
 add_filter( 'wp_list_categories', 'embark_list_categories_output_change' );
+
+// Save Posts views
+function embark_save_post_views($postID){
+	$metaKey = 'embark_post_views';
+	$views = get_post_meta($postID, $metaKey, true);
+
+	$count = ( empty($views) ? 0 : $views);
+	$count++;
+
+	update_post_meta($postID, $metaKey, $count);
+
+	echo $views;
+}
+// Remove the previous and next postIDs to prevent false count increases triggered
+// by the previous and next posts navigation.
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );

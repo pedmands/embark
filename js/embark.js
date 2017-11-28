@@ -165,6 +165,8 @@ jQuery(document).ready(function($){
 
 	$(document).on('click', '.js-toggleSidebar', function(){
 		$('.embark-sidebar').toggleClass('sidebar-closed');
+		$('body').toggleClass('no-scroll');
+		$('.sidebar-overlay').fadeToggle(320);
 	}); // toggle sidebar
 	
 
