@@ -23,11 +23,9 @@
 		wp_enqueue_script( 'embark-ace', get_template_directory_uri() . '/js/ace/ace.js', array('jquery'), '1.2.9', true );
 		wp_enqueue_script( 'embark-custom-css-script',  get_template_directory_uri() . '/js/embark.custom_css.js', array('jquery'), '1.0.0', true );
 
- 	} else { return;
- 		
+ 	} else { 
+ 		return;
  	 }
-
- 	
  }
  add_action( 'admin_enqueue_scripts', 'embark_load_admin_scripts' );
 
