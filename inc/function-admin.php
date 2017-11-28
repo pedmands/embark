@@ -38,8 +38,8 @@
  	add_settings_field( 'sidebar-name', 'Full Name', 'embark_sidebar_name', 'embark_options', 'embark-sidebar-options' );
  	add_settings_field( 'sidebar-description', 'Description', 'embark_sidebar_description', 'embark_options', 'embark-sidebar-options' );
  	add_settings_field( 'sidebar-twitter', 'Twitter Handle','embark_sidebar_twitter', 'embark_options', 'embark-sidebar-options');
- 	add_settings_field( 'sidebar-facebook', 'Facebook URL','embark_sidebar_facebook', 'embark_options', 'embark-sidebar-options');
- 	add_settings_field( 'sidebar-gplus', 'Google+ URL','embark_sidebar_gplus', 'embark_options', 'embark-sidebar-options');
+ 	add_settings_field( 'sidebar-facebook', 'Facebook Handle','embark_sidebar_facebook', 'embark_options', 'embark-sidebar-options');
+ 	add_settings_field( 'sidebar-gplus', 'Google+ Handle','embark_sidebar_gplus', 'embark_options', 'embark-sidebar-options');
 
  	// Theme Options
  	register_setting('embark-theme-options', 'post_formats');
@@ -145,11 +145,11 @@ function embark_sidebar_twitter(){
 }
 function embark_sidebar_facebook(){
 	$facebook = esc_attr(get_option('facebook_handle'));
- 	echo '<input type="text" name="facebook_handle" value="'.$facebook.'" placeholder="http://" />';
+ 	echo '<input type="text" name="facebook_handle" value="'.$facebook.'" placeholder="Facebook Handle" />';
 }
 function embark_sidebar_gplus(){
 	$gplus = esc_attr(get_option('gplus_handle'));
- 	echo '<input type="text" name="gplus_handle" value="'.$gplus.'" placeholder="http://" />';
+ 	echo '<input type="text" name="gplus_handle" value="'.$gplus.'" placeholder="Google Plus Handle" />';
 }
 
 // Remove the @ from Twitter Handle SANITIZE

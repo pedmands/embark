@@ -49,10 +49,11 @@ function embark_sidebar_init(){
 			'description'	=> 'Dynamic Right Sidebar',
 			'before_widget'	=> '<section id=%1$s class="embark-widget %2$s">',
 			'after_widget'	=> '</section>',
-			'before_title'	=> '<h2 class=""embark-widget-title>',
+			'before_title'	=> '<h2 class="embark-widget-title">',
 			'after_title'	=> '</h2>'
 		));
 }
+add_action('widgets_init', 'embark_sidebar_init');
 
 /*
  ======================================

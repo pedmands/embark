@@ -19,12 +19,17 @@
 	
 </head>
 <body <?php body_class(); ?>>
-	
+	<!-- sidebar-closed -->
 	<div class="embark-sidebar">
-		<div class="sidebar-scroll">
-			<?php get_sidebar(); ?>
-		</div>
-	</div>
+		<div class="embark-sidebar-container">
+			<a class="js-toggleSidebar sidebar-close">
+				<span class="embark-icon embarkclose"></span>
+			</a>
+			<div class="sidebar-scroll">
+				<?php get_sidebar(); ?>
+			</div><!-- .sidebar-scroll -->
+		</div><!-- .embark-sidebar-container -->
+	</div><!-- .embark-sidebar -->
 
 
 	<div class="container-fluid embark-container-fluid">
@@ -33,6 +38,10 @@
 			<div class="col-12">
 				
 				<header class="header-container text-center background-image" style="background-image:url('<?php header_image(); ?>');">
+
+					<a class="js-toggleSidebar sidebar-open">
+						<span class="embark-icon embarkmenu"></span>
+					</a>
 					
 					<div class="header-content">
 						<div class="header-info">

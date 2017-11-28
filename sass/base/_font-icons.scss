@@ -50,6 +50,7 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  color: $light-gray;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
@@ -58,13 +59,13 @@
 
 .embark-social-facebook:before {
   content: "\e900";
-  color: #3b5998;
+
 }
 .embark-social-google:before {
   content: "\e901";
-  color: red;
+
 }
 .embark-social-twitter:before {
   content: "\e902";
-  color: #1da1f2;
+
 }

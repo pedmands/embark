@@ -159,4 +159,14 @@ jQuery(document).ready(function($){
 		return ((el_bottom - el_height*0.25 > scroll_pos ) && (el_top < (scroll_pos+0.5*window_height)));
 	} // isVisible()
 
+	/* 
+		===== SIDBAR  FUNCTIONS =====
+	*/
+
+	$(document).on('click', '.js-toggleSidebar', function(){
+		$('.embark-sidebar').toggleClass('sidebar-closed');
+	}); // toggle sidebar
+	
+
+
 });
