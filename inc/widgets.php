@@ -164,11 +164,32 @@ class Embark_Popular_Posts_Widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		endif;
 		if($posts_query->have_posts()):
-			echo '<ul>';
+			
 				while($posts_query->have_posts() ) : $posts_query->the_post();
-					echo '<li>' .get_the_title().'</li>';
+					$comments_num = get_comments_number();
+					if(comments_open()){
+						//get comments link
+						if($comments_num == 0){
+							$comments = __('No Comments');
+						} elseif ($comments_num >1){
+							$comments = $comments_num . __(' Comments');
+						} else {
+							$comments = __('1 Comment');
+						}
+						$comments = '<a class="comments-link" href="'.get_comments_link().'"><span class="embark-icon embarkcomment"></span> '.$comments.'</a>';
+					} else {
+						$comments = __('Comments are closed');
+					}
+
+
+					echo '<div class="media">';
+					echo '<div class="media-left"><img class="media-object" src="'.get_template_directory_uri().'/img/post-'.(get_post_format() ? get_post_format() : 'standard').'.png" alt="'.get_the_title().'"/></div>';
+					echo '<div class="media-body"><a href="'.get_the_permalink().'">' .get_the_title().'</a></div>';
+					echo '</div>';
+					echo '<div class="popular-comments">'.$comments.'</div>';
+					
 				endwhile;
-			echo '</ul>';
+			
 		endif;
 		echo $args['after_widget'];
 	}

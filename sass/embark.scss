@@ -738,10 +738,10 @@ h1 {
 */
 .embark-widget {
 	margin: 30px 0 60px;
-	padding: 0 20px;
+	padding: 0 30px;
 	ul {
 		list-style-type: none;
-		padding: 0 10px;
+		padding: 0 ;
 	}
 }
 h2.embark-widget-title {
@@ -755,6 +755,8 @@ h2.embark-widget-title {
 	line-height: 1em;
 	margin-bottom: 20px;
 	letter-spacing: 0.2px;
+	margin-right: -5px;
+	margin-left: -5px;
 }
 // Profile Widget 
 .embark-profile-widget {
@@ -784,7 +786,7 @@ h2.embark-widget-title {
 		line-height: 1em;
 	}
 	a {
-		padding: 4px 0;
+		padding: 6px 0;
 	}
 	span {
 		position: absolute;
@@ -815,5 +817,24 @@ h2.embark-widget-title {
 		a {
 			text-transform: uppercase;
 		}
+	}
+} // .widget_recent_comments
+
+// Popular Posts Widget
+.embark-popular-posts {
+	.media {
+	}
+	.media-left {
+		margin-right:.5em;
+	}
+	.media-body {
+		border-bottom: 1px solid #303030;
+	}
+	.popular-comments {
+		text-transform: uppercase;
+		display: block;
+		text-align: right;
+		font-size: .65em;
+		margin-bottom: 1.5em;
 	}
 }
